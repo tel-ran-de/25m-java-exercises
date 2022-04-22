@@ -16,4 +16,31 @@ public class Garden {
      * процесс роста этих двух растений в течение нескольких лет.
      *
      * */
+    public static void main(String[] args) {
+        Plant t1 = new Tree("Pine",100,1);
+        Plant f1 = new Flower("Tulip",0,1);
+
+        Plant[] plants={t1,f1};
+
+        int yearsToGrow =2;
+
+        System.out.println("Growing plants for "+yearsToGrow+" years");
+
+        growPlantsForNumberOfYears(plants,yearsToGrow);
+
+        System.out.println(" Tree has height: "+t1.getHeight()+" and is "+t1.getAge()+ " years old");
+        System.out.println(" Flower has height: "+f1.getHeight()+" and is "+f1.getAge()+" years old");
+
+    }
+
+    public static void growPlantsForNumberOfYears(Plant[] plants,int numberOfYears){
+        for(int i=0;i<numberOfYears;i++){ //
+            for(Plant plant:plants){//plants[i] plants[0]
+                plant.doSpring();
+                plant.doSummer();
+                plant.doAutumn();
+                plant.doWinter();
+            }
+        }
+    }
 }
